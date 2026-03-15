@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		D12345678901234567890123 /* MCPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12345678901234567890124 /* MCPApp.swift */; };
-		D12345678901234567890143 /* MCPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12345678901234567890144 /* MCPServer.swift */; };
 		D12345678901234567890147 /* HTTPMCPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12345678901234567890148 /* HTTPMCPServer.swift */; };
+		DA00000000000000000000000 /* MCPModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA00000000000000000000010 /* MCPModels.swift */; };
+		DA00000000000000000000001 /* ToolProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA00000000000000000000011 /* ToolProvider.swift */; };
+		DA00000000000000000000002 /* AccessoryTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA00000000000000000000012 /* AccessoryTools.swift */; };
+		DA00000000000000000000003 /* RoomTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA00000000000000000000013 /* RoomTools.swift */; };
+		DA00000000000000000000004 /* OrganizationTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA00000000000000000000014 /* OrganizationTools.swift */; };
+		DA00000000000000000000005 /* SceneTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA00000000000000000000015 /* SceneTools.swift */; };
 		D12345678901234567890149 /* HTTPMCPServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12345678901234567890150 /* HTTPMCPServerTests.swift */; };
 		D12345678901234567890151 /* HomeKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12345678901234567890152 /* HomeKitManager.swift */; };
 		D12345678901234567890164 /* CITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12345678901234567890165 /* CITests.swift */; };
@@ -29,8 +34,13 @@
 		D12345678901234567890124 /* MCPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCPApp.swift; sourceTree = "<group>"; };
 		D12345678901234567890126 /* HomeKitMCP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeKitMCP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D12345678901234567890127 /* HomeKitSync.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HomeKitSync.entitlements; sourceTree = "<group>"; };
-		D12345678901234567890144 /* MCPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCPServer.swift; sourceTree = "<group>"; };
 		D12345678901234567890145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA00000000000000000000010 /* MCPModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCPModels.swift; sourceTree = "<group>"; };
+		DA00000000000000000000011 /* ToolProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolProvider.swift; sourceTree = "<group>"; };
+		DA00000000000000000000012 /* AccessoryTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryTools.swift; sourceTree = "<group>"; };
+		DA00000000000000000000013 /* RoomTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTools.swift; sourceTree = "<group>"; };
+		DA00000000000000000000014 /* OrganizationTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationTools.swift; sourceTree = "<group>"; };
+		DA00000000000000000000015 /* SceneTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTools.swift; sourceTree = "<group>"; };
 		D12345678901234567890148 /* HTTPMCPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMCPServer.swift; sourceTree = "<group>"; };
 		D12345678901234567890150 /* HTTPMCPServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMCPServerTests.swift; sourceTree = "<group>"; };
 		D12345678901234567890152 /* HomeKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitManager.swift; sourceTree = "<group>"; };
@@ -69,13 +79,26 @@
 			isa = PBXGroup;
 			children = (
 				D12345678901234567890124 /* MCPApp.swift */,
-				D12345678901234567890144 /* MCPServer.swift */,
+				DA00000000000000000000010 /* MCPModels.swift */,
 				D12345678901234567890148 /* HTTPMCPServer.swift */,
 				D12345678901234567890152 /* HomeKitManager.swift */,
+				DA00000000000000000000020 /* Tools */,
 				D12345678901234567890127 /* HomeKitSync.entitlements */,
 				D12345678901234567890145 /* Info.plist */,
 			);
 			path = HomeKitSync;
+			sourceTree = "<group>";
+		};
+		DA00000000000000000000020 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				DA00000000000000000000011 /* ToolProvider.swift */,
+				DA00000000000000000000012 /* AccessoryTools.swift */,
+				DA00000000000000000000013 /* RoomTools.swift */,
+				DA00000000000000000000014 /* OrganizationTools.swift */,
+				DA00000000000000000000015 /* SceneTools.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		D12345678901234567890131 /* Products */ = {
@@ -195,9 +218,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D12345678901234567890123 /* MCPApp.swift in Sources */,
-				D12345678901234567890143 /* MCPServer.swift in Sources */,
+				DA00000000000000000000000 /* MCPModels.swift in Sources */,
 				D12345678901234567890147 /* HTTPMCPServer.swift in Sources */,
 				D12345678901234567890151 /* HomeKitManager.swift in Sources */,
+				DA00000000000000000000001 /* ToolProvider.swift in Sources */,
+				DA00000000000000000000002 /* AccessoryTools.swift in Sources */,
+				DA00000000000000000000003 /* RoomTools.swift in Sources */,
+				DA00000000000000000000004 /* OrganizationTools.swift in Sources */,
+				DA00000000000000000000005 /* SceneTools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -148,7 +148,7 @@ class RoomTools: ToolProvider {
             return errorResponse(id: request.id, message: "Room '\(roomName)' not found")
         }
 
-        let op = withHomeKitOperation { home.updateName(newName, for: room, completionHandler: $0) }
+        let op = withHomeKitOperation { room.updateName(newName, completionHandler: $0) }
 
         if op.timedOut { return timeoutResponse(id: request.id) }
         if let error = op.error {

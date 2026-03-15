@@ -174,15 +174,12 @@ class SceneTools: ToolProvider {
                 continue
             }
 
-            guard let writeAction = HMCharacteristicWriteAction(
+            let writeAction = HMCharacteristicWriteAction(
                 characteristic: characteristic,
                 targetValue: power as NSNumber
-            ) else {
-                failedActions.append("Could not create write action for '\(accessoryName)'")
-                continue
-            }
+            )
 
-            let addOp = withHomeKitOperation { home.addAction(writeAction, to: actionSet, completionHandler: $0) }
+            let addOp = withHomeKitOperation { actionSet.addAction(writeAction, completionHandler: $0) }
 
             if addOp.timedOut {
                 failedActions.append("⏰ Timed out adding action for '\(accessoryName)'")
