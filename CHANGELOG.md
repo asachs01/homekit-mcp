@@ -8,6 +8,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Scene management domain** (`SceneTools`): `get_all_scenes`, `activate_scene`, `create_scene`, `delete_scene`
+- `ToolProvider` protocol — each domain implements it; HTTPMCPServer auto-discovers all tools via providers
+- Domain-organized tool files: `AccessoryTools`, `RoomTools`, `OrganizationTools`, `SceneTools`
+- Shared helper functions (`withHomeKitOperation`, `textResponse`, `errorResponse`) for clean, consistent tool implementations
+
+### Changed
+- **HTTPMCPServer** refactored from ~1400-line monolith into a thin HTTP router (~250 lines) that delegates to domain providers
+- Tool registration and dispatch are now automatic — adding a new domain only requires creating a `ToolProvider` and adding it to the providers array
+- Welcome page dynamically lists all tools from registered providers
+- Server version bumped to 2.0.0
+
+### Removed
+- `MCPServer.swift` (defunct stdio-based server kept as dead code reference)
+
+## [1.0.0] - Prior
+
+### Added
 - Initial HomeKit MCP Server implementation
 - HTTP-based MCP protocol support with Server-Sent Events
 - Three core tools: `get_all_accessories`, `get_all_rooms`, `set_accessory_room`
